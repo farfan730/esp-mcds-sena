@@ -3,29 +3,22 @@
 class Animal
 {
 	
- public $nombre;
- public $edad;
- public $peso;
+	 public $nombre;
+	 private $edad;
+	 protected $peso;
 
- public function correr(){
+ public function __construct($mombre, $edad, $peso){
 
- 	echo "esta corriendo";
+ 	$this->nombre=$nombre;
+ 	$this->edad=$edad;
+ 	$this->peso=$peso;
  }
- public function comer(){
- 	echo "esta comiendo";
- } 
- public function dormir(){
- 	echo "esata durmiendo";
- }  
-
 
 }
 
 
-$ani =new Animal;
-$ani->correr();
-$ani->comer();
-$ani->dormir();
-
-
+	$gat =new Animal("firu", 20, 5);
+	echo "nombre".$gat->nombre;
+	echo "edad" .$gat->edad;
+    echo "peso" .$gat->peso;
 ?>
