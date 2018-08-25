@@ -14,7 +14,7 @@ abstract class fruta{
 	}
 
 
-
+// este metodo obliga a las clases hijas a sobreescribir el metodo
 	abstract public function getInfo();
 
 
