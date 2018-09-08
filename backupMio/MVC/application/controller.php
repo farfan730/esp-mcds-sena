@@ -18,7 +18,7 @@ class Controller
    {
 
     //$datos = $this->model->infoUsuario();
-     $datos = $this->model->getAllUsers();
+     $datos = $this->model->infoUsuario();
      $this->load->view('home.php', $datos);
    }
 }
