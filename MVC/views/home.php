@@ -18,10 +18,8 @@
             <div class="row"> 
              <div calss="col-md-8 offset-2">                
                 <h1 class="text-center"> <i class="fa fa-users"></i>CRUD MVC</h1>
-                <hr>
-
-
-                  <a href="" class="btn btn-success"><i class="fa fa-plus"> Add User </i></a>
+                <hr>              
+                  <a href="?page=add" class="btn btn-success"><i class="fa fa-plus"> Add User </i></a>
                   <br> <br>
 
                   <table class="table table-striped table-hover table-dark">
