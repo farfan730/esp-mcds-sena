@@ -15,6 +15,9 @@ class Controller
        if($_GET['page'] == 'add'){
           $this->add();
         }
+       if($_GET['page'] == 'show'){
+          $this->show($_GET['id']);
+        }
 
      }
       else{
@@ -42,16 +45,33 @@ class Controller
       $address     = $_POST['address'];
       if ($this->model->addUser($firstName, $lastName, $email, $phoneNumber, $address)) {
         echo "<script> alert('User was added successfully!'); window.location.replace('./'); </script>";
+
+
+             $_SESSION['status'] = "success";
+             $_SESSION['message'] = "User was adedd successfully!";
+             header('location: ./');
+
       } else {
         echo "<script> alert('User wasn't added successfully!'); window.location.replace('./'); </script>";
+
+             $_SESSION['status'] = "error";
+             $_SESSION['message'] = "User wasn't added successfully!";
+             header('location: ./');
+
+
       }
       
     }
     $this->load->view('users/add.php');
   }
+
+ public function show($id)
+ {
+  $datos = $this->model->getUser($id);
+  $this->load->view('users/show.php', $datos);
+ }
+
 }
-
-
 ?>
 
 

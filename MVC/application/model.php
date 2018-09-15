@@ -45,6 +45,23 @@ public function addUser($firstName, $lastName, $email, $phoneNumber, $address) {
 		} 
 	}
 
+
+	public function getUser($id) {
+		try {
+			$sql = "SELECT * FROM users WHERE id=:id";
+			$stm = $this->conx->prepare($sql);
+
+			//evita codigo malicioso variable segura
+			$stm->bindparam(":id", $id);
+			$stm->execute();
+			return $stm->fetchAll();
+
+		} catch (PDOException $e) {
+			echo $e->getMessage();
+		}
+
+	}
+
  public function infoUsuario()
  {
    return array(
